@@ -1,6 +1,7 @@
 package com.imsc.det.profil.beans;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,10 +16,10 @@ public class Categorie implements Serializable  {
 	    private String IntituleCat;
 	    
 	    @ManyToMany
-	    private Collecion <Test> tests;
+	    private Collection <Test> tests;
 	    
 	    @OneToMany(mappedBy="categorie",fetch=FetchType.LAZY)
-	    private Collecion <Question> questions;
+	    private Collection <Question> questions;
 	    
 		public Categorie() {
 			super();
@@ -45,19 +46,19 @@ public class Categorie implements Serializable  {
 			IntituleCat = intituleCat;
 		}
 
-		public Collecion<Test> getTests() {
+		public Collection<Test> getTests() {
 			return tests;
 		}
 
-		public void setTests(Collecion<Test> tests) {
+		public void setTests(Collection<Test> tests) {
 			this.tests = tests;
 		}
 
-		public Collecion<Question> getQuestions() {
+		public Collection<Question> getQuestions() {
 			return questions;
 		}
 
-		public void setQuestions(Collecion<Question> questions) {
+		public void setQuestions(Collection<Question> questions) {
 			this.questions = questions;
 		}
 	    
