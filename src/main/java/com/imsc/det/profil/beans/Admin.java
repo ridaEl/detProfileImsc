@@ -8,7 +8,7 @@ public class Admin {
    private String imageAdmin ;
    private String motDePasseAdmin ;
    private String emailAdmin ;
-   private Collection <Test> tests ;
+   private Collection <Test> tests ; 
    	public Admin() {
 	super();
    	}

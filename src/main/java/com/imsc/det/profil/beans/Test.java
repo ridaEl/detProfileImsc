@@ -6,7 +6,7 @@ import java.util.Set;
 public class Test {
 	   private Long idTest ;
 	   private String intitule ;
-	   private String imageAdmin ;
+	   private String  imageAdmin ;
 	   private Admin admin ;
 	   private Collection <Categorie> categorie ;
 	   
