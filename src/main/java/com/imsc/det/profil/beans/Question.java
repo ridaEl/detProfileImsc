@@ -14,10 +14,10 @@ public class Question implements Serializable {
 	private Long idQuest;
 	@Column(name="Intitule")
 	private String IntituleQuest;
-	@OneToOne
+	@ManyToOne
 	@JoinTable(name="Categorie")
 	private Categorie Cat;
-	@OneToMany
+	@ManyToMany
 	@JoinTable(name="Reponse")
 	private Set<Reponse> reponses;
 	
