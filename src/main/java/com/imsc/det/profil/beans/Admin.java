@@ -2,12 +2,22 @@ package com.imsc.det.profil.beans;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Admin {
+	 @Id
+	 @GeneratedValue(strategy=GenerationType.IDENTITY)
    private Long idAdmin ;
    private String nomAdmin ;
    private String imageAdmin ;
    private String motDePasseAdmin ;
    private String emailAdmin ;
+   @OneToMany(mappedBy="admin")
    private Collection <Test> tests ; 
    	public Admin() {
 	super();

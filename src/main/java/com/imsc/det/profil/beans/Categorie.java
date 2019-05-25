@@ -15,7 +15,7 @@ public class Categorie implements Serializable  {
 	    private Long idCat;
 	    private String IntituleCat;
 	    
-	    @ManyToMany
+	    @ManyToMany(mappedBy="categories")
 	    private Collection <Test> tests;
 	    
 	    @OneToMany(mappedBy="categorie",fetch=FetchType.LAZY)

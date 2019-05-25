@@ -1,14 +1,35 @@
 package com.imsc.det.profil.beans;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
 
-public class Test {
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Test implements Serializable  {
+	   @Id
+	   @GeneratedValue(strategy=GenerationType.IDENTITY)
 	   private Long idTest ;
 	   private String intitule ;
 	   private String  imageAdmin ;
+	   @ManyToOne
+	   @JoinColumn(name="id_Admin")
 	   private Admin admin ;
-	   private Collection <Categorie> categorie ;
+	   @ManyToMany
+	   @JoinTable(name="Test_Categorie" ,
+			    joinColumns = { @JoinColumn(name = "Test_id") }, 
+		        inverseJoinColumns = { @JoinColumn(name = "Categorie_id") }
+			   )
+	   private Collection <Categorie> categories ;
 	   
 	public Test() {
 		super();
@@ -43,12 +64,13 @@ public class Test {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
-	public Collection<Categorie> getCategorie() {
-		return categorie;
+	public Collection<Categorie> getCategories() {
+		return categories;
 	}
-	public void setCategorie(Collection<Categorie> categorie) {
-		this.categorie = categorie;
+	public void setCategories(Collection<Categorie> categories) {
+		this.categories = categories;
 	}
+	
 	   
 	   
 }
