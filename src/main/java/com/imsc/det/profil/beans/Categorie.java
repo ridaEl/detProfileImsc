@@ -12,7 +12,7 @@ public class Categorie implements Serializable  {
 
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long idCat;
+	    private Long idCat ;
 	    private String IntituleCat;
 	    
 	    @ManyToMany(mappedBy="categories")

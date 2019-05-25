@@ -20,7 +20,7 @@ public class Test implements Serializable  {
 	   @GeneratedValue(strategy=GenerationType.IDENTITY)
 	   private Long idTest ;
 	   private String intitule ;
-	   private String  imageAdmin ;
+	   private String   imageAdmin ;
 	   @ManyToOne
 	   @JoinColumn(name="id_Admin")
 	   private Admin admin ;

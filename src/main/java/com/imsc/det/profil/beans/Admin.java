@@ -1,5 +1,6 @@
 package com.imsc.det.profil.beans;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Admin {
+public class Admin implements Serializable   {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
    private Long idAdmin ;
