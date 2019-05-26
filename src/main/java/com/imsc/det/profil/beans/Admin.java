@@ -11,8 +11,8 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Admin   implements Serializable   {
-	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+   @Id
+   @GeneratedValue(strategy=GenerationType.IDENTITY)
    private Long idAdmin ;
    private String nomAdmin ;
    private String imageAdmin ;
