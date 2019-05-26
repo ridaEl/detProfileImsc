@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Admin implements Serializable   {
+public class Admin   implements Serializable   {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
    private Long idAdmin ;

@@ -22,7 +22,9 @@ public class Reponse {
 	private int Score;
 	
 	@ManyToMany
-	@JoinTable(name="Question")
+	@JoinTable(name="Question" ,
+			joinColumns = { @JoinColumn(name = "Reponse_id") }, 
+	        inverseJoinColumns = { @JoinColumn(name = "Question_id") })
 	private Collection<Question> questions;
 
 	public Reponse() {

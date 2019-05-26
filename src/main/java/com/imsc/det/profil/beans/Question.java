@@ -5,14 +5,12 @@ import java.util.Collection;
 import java.util.Set;
 
 import javax.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 public class Question implements Serializable {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idQuestion")
 	private Long idQuest;
 	
@@ -20,11 +18,10 @@ public class Question implements Serializable {
 	private String IntituleQuest;
 	
 	@ManyToOne
-	@JoinTable(name="Categorie")
+	@JoinColumn(name="id_categorie")
 	private Categorie Cat;
 	
-	@ManyToMany
-	@JoinTable(name="Reponse")
+	@ManyToMany(mappedBy = "questions")
 	private Collection<Reponse> reponses;
 	
 	public Question(String intituleQuest, Categorie cat) {
