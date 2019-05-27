@@ -19,7 +19,7 @@ public class AdminMetierImpl implements AdminMetier {
 	}
 
 	@Override
-	public void update(Long idAdmin, Admin adm) {
+	public void update(Long idAdmin, Admin adm)  {
 		// TODO Auto-generated method stub
 		Admin admin = adminRepository.findById(idAdmin).get();
 		admin.setNomAdmin(adm.getNomAdmin());

@@ -6,7 +6,7 @@ import com.imsc.det.profil.beans.Question;
 import com.imsc.det.profil.beans.Reponse;
 import com.imsc.det.profil.beans.Test;
 
-public interface AdminMetier {
+public interface  AdminMetier {
 	public void save(Admin admin);
 	public void update(Long idAdmin,Admin adm);
 	public void delete(Long idAdmin);
