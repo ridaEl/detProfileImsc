@@ -29,13 +29,13 @@ public class DerProfilImscApplication  implements CommandLineRunner
 
 	@Override
 	public void run(String... args) throws Exception {
-	 Admin a=	 adminRepository.save( new Admin("nom", "image", "mdp", "email"));
-	 Admin a2=	 adminRepository.save( new Admin("nom1", "image1", "mdp1", "email1"));
-	 
-	Test t1= new Test();
-	t1.setAdmin(a);
-	t1.setIntitule("dddddddddd");
-	testRepository.save(t1);
+//	 Admin a=	 adminRepository.save( new Admin("nom", "image", "mdp", "email"));
+//	 Admin a2=	 adminRepository.save( new Admin("nom1", "image1", "mdp1", "email1"));
+//	 
+//	Test t1= new Test();
+//	t1.setAdmin(a);
+//	t1.setIntitule("dddddddddd");
+//	testRepository.save(t1);
 	
 	}
 
