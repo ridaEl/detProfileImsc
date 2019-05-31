@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Admin</title>
+</head>
+<body>
+  <h1>Admin test</h1>
+  	 @Autowired
+	private AdminMetier adminmetier;
+@RequestMapping(value="/admins",method=RequestMethod.POST)
+	public void save(Admin admin) {
+		adminmetier.save(admin);
+	}
+@RequestMapping(method = RequestMethod.PUT,value="/update/admin/{id}/{admin}")
+	public void update(Long idAdmin, Admin adm) {
+		adminmetier.update(idAdmin, adm);
+	}
+	@RequestMapping(method = RequestMethod.DELETE, value="/delete/admin/{id}")
+	public void delete(Long idAdmin) {
+		adminmetier.delete(idAdmin);
+	} 
+</body>
+</html>
