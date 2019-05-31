@@ -22,16 +22,12 @@ public class Question implements Serializable {
 	private Categorie Cat;
 	
 	@ManyToMany(mappedBy = "questions")
-	 @JoinTable(name="Question_Reponse" ,
-	    joinColumns = { @JoinColumn(name = "Question_id") }, 
-     inverseJoinColumns = { @JoinColumn(name = "Reponse_id") }
-	   )
 	private Collection<Reponse> reponses;
 	
-	public Question(String intituleQuest, Categorie cat) {
+	public Question(String intituleQuest) {
 		super();
 		IntituleQuest = intituleQuest;
-		Cat = cat;
+		
 	}
 	public Question() {
 		super();
@@ -57,8 +53,8 @@ public class Question implements Serializable {
 	public Collection<Reponse> getReponses() {
 		return reponses;
 	}
-	public void setReponses(Collection<Reponse> reponses) {
-		this.reponses = reponses;
+	public void setReponses(Collection<Reponse> collection) {
+		this.reponses = collection;
 	}
 
 }

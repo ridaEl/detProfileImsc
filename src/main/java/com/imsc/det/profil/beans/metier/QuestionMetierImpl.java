@@ -1,10 +1,15 @@
-package com.imsc.det.profil.metier;
+package com.imsc.det.profil.beans.metier;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.imsc.det.profil.beans.Question;
-import com.imsc.det.profil.dao.QuestionRepository;
-
+import com.imsc.det.profil.beans.dao.QuestionRepository;
+@Service
+@Transactional
 public class QuestionMetierImpl implements QuestionMetier{
-
+	@Autowired
 	private QuestionRepository QuestionRepository;
 	@Override
 	public void save(Question qst) {
@@ -26,7 +31,7 @@ public class QuestionMetierImpl implements QuestionMetier{
 	}
 
 	@Override
-	public void delete(Long idQuestion, Question qst) {
+	public void delete(Long idQuestion) {
 		// TODO Auto-generated method stub
 		QuestionRepository.deleteById(idQuestion);
 	}

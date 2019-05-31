@@ -20,7 +20,7 @@ public class Test implements Serializable  {
 	   @GeneratedValue(strategy=GenerationType.IDENTITY)
 	   private Long idTest ;
 	   private String intitule ;
-	   private String   imageAdmin ;
+	  
 	   @ManyToOne
 	   @JoinColumn(name="id_Admin")
 	   private Admin admin ;
@@ -34,10 +34,10 @@ public class Test implements Serializable  {
 	public Test() {
 		super();
 	}
-	public Test(String intitule, String imageAdmin, Admin admin) {
+	public Test(String intitule) {
 		super();
 		this.intitule = intitule;
-		this.imageAdmin = imageAdmin;
+		
 		this.admin = admin;
 	}
 	public Long getIdTest() {
@@ -52,12 +52,7 @@ public class Test implements Serializable  {
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
-	public String getImageAdmin() {
-		return imageAdmin;
-	}
-	public void setImageAdmin(String imageAdmin) {
-		this.imageAdmin = imageAdmin;
-	}
+	
 	public Admin getAdmin() {
 		return admin;
 	}

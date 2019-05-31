@@ -13,7 +13,7 @@ public class Categorie implements Serializable  {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long idCat ;
-	    private String IntituleCat;
+	    private String intituleCat;
 	    
 	    @ManyToMany(mappedBy="categories")
 	    private Collection <Test> tests;
@@ -27,7 +27,7 @@ public class Categorie implements Serializable  {
 
 		public Categorie(String intituleCat) {
 			super();
-			IntituleCat = intituleCat;
+			intituleCat = intituleCat;
 		}
 
 		public Long getIdCat() {
@@ -38,12 +38,14 @@ public class Categorie implements Serializable  {
 			this.idCat = idCat;
 		}
 
+			
+
 		public String getIntituleCat() {
-			return IntituleCat;
+			return intituleCat;
 		}
 
 		public void setIntituleCat(String intituleCat) {
-			IntituleCat = intituleCat;
+			this.intituleCat = intituleCat;
 		}
 
 		public Collection<Test> getTests() {
