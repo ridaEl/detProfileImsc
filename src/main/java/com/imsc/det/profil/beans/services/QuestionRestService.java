@@ -1,9 +1,12 @@
 package com.imsc.det.profil.beans.services;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.imsc.det.profil.beans.Categorie;
 import com.imsc.det.profil.beans.Question;
 import com.imsc.det.profil.beans.metier.QuestionMetier;;
 @RestController
@@ -26,4 +29,16 @@ public class QuestionRestService {
 	public void deleteStudent(@PathVariable Long id) {
 		questionmetier.delete(id);
 	}
+	 @RequestMapping(value="/questions", method = RequestMethod.GET)
+		public List<Question> findAll() {
+			return questionmetier.listeQuestions();
+		}
+	 
+	 @RequestMapping(value="/questionsParCategorie/{idCategorie}", method = RequestMethod.GET)
+	 public List<Question> listeQuestionParCategorie(@PathVariable Long idCategorie) {
+			return questionmetier.getlisteQuestionParCategorie(idCategorie);
+		}
+//		public List<Question> listeQuestionParCategorie(@PathVariable Categorie categorie) {
+//			return questionmetier.listeQuestionParCategorie(categorie);
+//		}
 }

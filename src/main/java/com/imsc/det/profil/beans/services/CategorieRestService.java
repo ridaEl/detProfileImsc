@@ -1,6 +1,8 @@
 package com.imsc.det.profil.beans.services;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,5 +27,10 @@ public class CategorieRestService {
 	@DeleteMapping("/categorie/{id}")
 	public void deleteStudent(@PathVariable Long id) {
 		categorieMetier.delete(id);
+	}
+	
+	@RequestMapping(value="/categories", method = RequestMethod.GET)
+	public List<Categorie> findAll() {
+		return categorieMetier.listeCategories();
 	}
 }

@@ -1,5 +1,7 @@
 package com.imsc.det.profil.beans.metier;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,5 +33,8 @@ public class CategorieMetierImpl implements CategorieMetier {
 	public void delete(Long idCat) {
 					categorieRepository.deleteById(idCat);
 	}
-	
+	@Override
+	public List<Categorie> listeCategories() {
+		return categorieRepository.findAll();
+	}
 }

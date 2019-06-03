@@ -18,6 +18,7 @@ public class Admin   implements Serializable   {
    private String imageAdmin ;
    private String motDePasseAdmin ;
    private String emailAdmin ;
+   private String role;
    @OneToMany(mappedBy="admin")
    private Collection <Test> tests ; 
    	public Admin() {
@@ -29,6 +30,15 @@ public Admin(String nomAdmin, String imageAdmin, String motDePasseAdmin, String 
 	this.imageAdmin = imageAdmin;
 	this.motDePasseAdmin = motDePasseAdmin;
 	this.emailAdmin = emailAdmin;
+}
+
+
+
+public String getRole() {
+	return role;
+}
+public void setRole(String role) {
+	this.role = role;
 }
 public Long getIdAdmin() {
 	return idAdmin;
